@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+//namespace
 
 use Nette,
 	Nette\Application\Routers\RouteList,
