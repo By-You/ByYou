@@ -1,0 +1,14 @@
+parameters:
+
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=byyou'
+	user: root
+	password: ''
+	options:
+		lazy: yes
+
+doctrine:
+    user: root
+    password: ''
+    dbname: byyou
