@@ -21,7 +21,12 @@ class RouterFactory
 	public static function createRouter()
 	{
 		$router = new RouteList();
-		$router[] = new Route('[<lang=cs [a-z]{2}>/]<presenter>/<action>[/<id>]', 'Homepage:default');
+        $router[] = new Route('<presenter>/<action>', array(
+            'module' => 'Front',
+            'presenter' => 'Homepage',
+            'action' => 'default',
+            'id' => NULL,
+        ));
 		return $router;
 	}
 
