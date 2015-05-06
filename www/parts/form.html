@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+
+<!-- ------------------------------------------------------------ -->
+<!-- ************************************************************ -->
+<!-- * Grafika a xhtml/css kod                              * -->
+<!-- * Copyright (c) 2007, Ondrej Pohorsky  All rights reserved * -->
+<!-- *                                                          * -->
+<!-- * author: Ondrej Pohorsky                                  * -->
+<!-- * url:    http://www.poho.cz                               * -->
+<!-- * mail:   poho@poho.cz                                     * -->
+<!-- * icq:    190484844                                        * -->
+<!-- *                                                          * -->
+<!-- * This work is under BSD license                           * -->
+<!-- ************************************************************ -->
+<!-- ------------------------------------------------------------ -->
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<title>Formulář</title>
+<meta name="author" content="Ondrej Pohorsky; http://www.poho.cz; poho@poho.cz" />
+
+<script type="text/javascript" src="../design/js/javascript.js"></script>
+
+<link rel="shortcut icon" href="../design/img/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../design/styles/default.css" media="screen, projection, tv" type="text/css" />
+<link rel="stylesheet" href="../design/styles/print.css" media="print" type="text/css" />
+</head>
+<body>
+  <div id="witti">
+  
+    <div id="header">
+      <a href="../index.html" class="logo"><span>Witti</span></a>
+      <p class="userinfo"><strong>wellard</strong> | <a href="#">Můj Účet</a> | <a href="#">Odhlášení!</a></p>
+      <div class="cleaner"></div>
+    </div><!-- hlavička -->
+    
+    <div id="main">
+      <div id="menu">
+        <ul>
+          <li><a href="../index.html">Úvod</a></li>
+          <li><a href="../parts.html" class="active">Části</a>
+            <ul>
+              <li><a href="../parts/text.html">Text</a></li>
+              <li><a href="../parts/lists.html">Seznamy</a></li>
+              <li><a href="../parts/table-list.html">Tabulka jako Seznam</a></li>
+              <li><a href="../parts/table-info.html">Informační tabule</a></li>
+              <li><a href="../parts/form.html" class="active">Formulář</a></li>
+              <li><a href="../parts/messages.html">Zprávy</a></li>
+              <li><a href="../parts/separate-columns.html">Oddělené sloupce</a></li>
+              <li><a href="../parts/gallery.html">Galerie</a></li>
+            </ul>
+          </li>
+          <li><a href="../licence.html">Licence</a></li>
+        </ul>
+      </div><!-- obsah -->
+      <div id="content">
+        <h1>Form</h1>
+
+        <form action="#" method="post">
+        <fieldset>
+          <legend>Textové vstupy, selectboxy a textarea</legend>
+          <label for="firstname">Jméno</label><br/>
+          <input type="text" name="firstname" id="firstname" /><br/>
+          <label for="surname">Příjmení</label><br/>
+          <input type="text" name="surname" id="surname" /><br/>
+          <label for="gender">Pohlaví</label><br/>
+          <select name="gender" id="gender">
+            <option value="man">Muž</option>
+            <option value="woman">Žena</option>
+          </select><br/>
+          <label for="bio">Biografie</label><br/>
+          <textarea name="bio" id="bio" rows="5" cols="50"></textarea><br/>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Checkboxy and radiobuttony</legend>
+          <label for="rolls"><input type="checkbox" id="rolls" /> - Mám rád rohlíky</label><br/>
+          <label for="bread"><input type="checkbox" id="bread" /> - Mám rád chleba</label><br/><br/>
+          <label for="red"><input type="radio" id="red" name="wine" value="red" /> - červené víno</label><br/>
+          <label for="white"><input type="radio" id="white" name="wine" value="white" /> - bíle víno</label><br/>
+        </fieldset>
+        <p class="submit"><input type="submit" value="Odeslat!" /></p>
+        </form>
+        
+        <div class="print">
+          <a href="javascript:print()"><em>Tisknout tuto stránku</em></a>
+        </div>
+      </div><!-- content -->
+      <div class="cleaner"></div>
+    </div><!-- main -->
+    
+    <div id="footer">
+      <p>design: <a href="http://www.poho.cz/">Ondřej Pohorský</a></p>
+    </div><!-- footer -->
+  
+  </div><!-- witti -->
+</body>
+</html>

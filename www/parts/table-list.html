@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+
+<!-- ------------------------------------------------------------ -->
+<!-- ************************************************************ -->
+<!-- * Graphics and xhtml/css code                              * -->
+<!-- * Copyright (c) 2007, Ondrej Pohorsky  All rights reserved * -->
+<!-- *                                                          * -->
+<!-- * author: Ondrej Pohorsky                                  * -->
+<!-- * url:    http://www.poho.cz                               * -->
+<!-- * mail:   poho@poho.cz                                     * -->
+<!-- * icq:    190484844                                        * -->
+<!-- *                                                          * -->
+<!-- * This work is under BSD license                           * -->
+<!-- ************************************************************ -->
+<!-- ------------------------------------------------------------ -->
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<title>Tabulka jako Seznam</title>
+<meta name="author" content="Ondrej Pohorsky; http://www.poho.cz; poho@poho.cz" />
+
+<script type="text/javascript" src="../design/js/javascript.js"></script>
+
+<link rel="shortcut icon" href="../design/img/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../design/styles/default.css" media="screen, projection, tv" type="text/css" />
+<link rel="stylesheet" href="../design/styles/print.css" media="print" type="text/css" />
+</head>
+<body>
+  <div id="witti">
+  
+    <div id="header">
+      <a href="../index.html" class="logo"><span>Witti</span></a>
+      <p class="userinfo"><strong>wellard</strong> | <a href="#">Můj Účet</a> | <a href="#">Odhlášení!</a></p>
+      <div class="cleaner"></div>
+    </div><!-- záhlaví -->
+    
+    <div id="main">
+      <div id="menu">
+        <ul>
+          <li><a href="../index.html">Úvod</a></li>
+          <li><a href="../parts.html" class="active">Části</a>
+            <ul>
+              <li><a href="../parts/text.html">Text</a></li>
+              <li><a href="../parts/lists.html">Seznamy</a></li>
+              <li><a href="../parts/table-list.html" class="active">Tabulka jako Seznam</a></li>
+              <li><a href="../parts/table-info.html">Informační tabule</a></li>
+              <li><a href="../parts/form.html">Formulář</a></li>
+              <li><a href="../parts/messages.html">Zprávy</a></li>
+              <li><a href="../parts/separate-columns.html">Oddělené sloupce</a></li>
+              <li><a href="../parts/gallery.html">Galerie</a></li>
+            </ul>
+          </li>
+          <li><a href="../licence.html">Licence</a></li>
+        </ul>
+      </div><!-- obsah -->
+      <div id="content">
+        <h1>Tabulka jako Seznam</h1>
+
+        <p>
+          Pokud chcete vytvořit pruhovanou tabulku (<em>např. použitím PHP</em>), nemusíte psát <em>class="neco"</em>
+          na každý řádek tabulky. Důvodem je fakt, že <strong>Witti</strong> obsahuje JavaScript, který to za Vás
+          automaticky udělá. Chci poděkovat <a href="http://www.wellstyled.com/">WellStyled.com</a> za toto řešení.
+        </p>
+        
+        <!-- Tabulka má ID "list" kvůli JS proužkování -->
+        <table id="list">
+          <tr>
+            <th class="left">Jméno</th>
+            <th>Zvíře</th>
+            <th>Oblíbený autor</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+        </table>
+        
+        <p class="center">
+          <a href="#">&lt; Předchozí</a> 4 / <strong>56</strong> <a href="#">Následující &gt;</a>
+        </p>
+        
+        <div class="print">
+          <a href="javascript:print()"><em>Tisknout tuto stránku</em></a>
+        </div>
+      </div><!-- obsah -->
+      <div class="cleaner"></div>
+    </div><!-- hlavní -->
+    
+    <div id="footer">
+      <p>design: <a href="http://www.poho.cz/">Ondřej Pohorský</a></p>
+    </div><!-- zápatí -->
+  
+  </div><!-- witti -->
+</body>
+</html>
