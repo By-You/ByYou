@@ -1,0 +1,64 @@
+{block content}
+<div id="content">
+        <h1>Tabulka jako Seznam</h1>
+
+        <p>
+          Pokud chcete vytvořit pruhovanou tabulku (<em>např. použitím PHP</em>), nemusíte psát <em>class="neco"</em>
+          na každý řádek tabulky. Důvodem je fakt, že <strong>Witti</strong> obsahuje JavaScript, který to za Vás
+          automaticky udělá. Chci poděkovat <a href="http://www.wellstyled.com/">WellStyled.com</a> za toto řešení.
+        </p>
+
+        <!-- Tabulka má ID "list" kvůli JS proužkování -->
+        <table id="list">
+          <tr>
+            <th class="left">Jméno</th>
+            <th>Zvíře</th>
+            <th>Oblíbený autor</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+          <tr>
+            <td class="left"><a href="#">Andy Wellard</a></td>
+            <td>Humster</td>
+            <td>Ernest Hemingway</td>
+            <td><a href="#"><strong>upravit</strong></a></td>
+            <td><a href="#"><strong>odstranit</strong></a></td>
+          </tr>
+        </table>
+
+        <p class="center">
+          <a href="#">&lt; Předchozí</a> 4 / <strong>56</strong> <a href="#">Následující &gt;</a>
+        </p>
+
+        <div class="print">
+          <a href="{$basePath}/javascript:print()"><em>Tisknout tuto stránku</em></a>
+        </div>
+      </div>

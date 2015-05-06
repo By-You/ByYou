@@ -1,0 +1,25 @@
+{block content}
+<div id="content">
+        <h1>Zprávy</h1>
+
+        <div class="error">
+          <p>Musíte vyplnit všechny položky</p>
+        </div>
+
+        <div class="succes">
+          <p>Uživatel <strong>Steel</strong> byl úspěšně odstraněn.</p>
+        </div>
+
+        <div class="question">
+          <p>Opravdu chcete odstranit položku <strong>Jak hrát na kytaru</strong>?</p>
+          <form action="#" method="post">
+            <div>
+              <input type="submit" value="Ano, chci" /> <input type="submit" value="Ne" />
+            </div>
+          </form>
+        </div>
+
+        <div class="print">
+          <a href="{$basePath}/javascript:print()"><em>Tisknout tuto stránku</em></a>
+        </div>
+      </div>
