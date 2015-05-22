@@ -5,7 +5,7 @@ namespace App\AdminModule;
 use Nette,
     App\Model;
 
-class HomepagePresenter extends BasePresenter
+class HomepagePresenter extends SecurePresenter
 {
     // ...
 }

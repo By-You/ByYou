@@ -9,17 +9,15 @@ use Doctrine\ORM\Mapping as ORM;
 */
 class Article extends \Kdyby\Doctrine\Entities\BaseEntity
 {
+    /**
+    * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue
+    */
+    protected $id;
 
-/**
-* @ORM\Id
-* @ORM\Column(type="integer")
-* @ORM\GeneratedValue
-*/
-protected $id;
-
-/**
-* @ORM\Column(type="string")
-*/
-protected $title;
-
+    /**
+    * @ORM\Column(type="string")
+    */
+    protected $title;
 }

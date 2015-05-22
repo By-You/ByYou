@@ -22,14 +22,14 @@
         <div class="header_resize">
           <div class="menu_nav">
             <ul>
-              <li class="active"><a n:href="Homepage:default"><span>Hlavní stránka</span></a></li>
-              <li><a n:href="Product:default"><span>Produkty</span></a></li>
-              <li><a n:href="About:default"><span>O nás</span></a></li>
-              <li><a n:href="Kontakt:default"><span>Kontakt</span></a></li>
+              <li {ifCurrent Homepage:default}class="active"{/ifCurrent}><a n:href="Homepage:"><span>Hlavní stránka</span></a></li>
+              <li {ifCurrent Product:default}class="active"{/ifCurrent}><a n:href="Product:"><span>Produkty</span></a></li>
+              <li {ifCurrent About:default}class="active"{/ifCurrent}><a n:href="About:"><span>O nás</span></a></li>
+              <li {ifCurrent Kontakt:default}class="active"{/ifCurrent}><a n:href="Kontakt:"><span>Kontakt</span></a></li>
             </ul>
           </div>
           <div class="logo">
-            <h1><a n:href="Homepage:default">style <span>your smile</span></a></h1>
+            <h1><a {ifCurrent Homepage:default}class="active"{/ifCurrent}>style <span>your smile</span></a></h1>
           </div>
           <div class="clr"></div>
           <div class="slider">
