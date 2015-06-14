@@ -1,0 +1,31 @@
+{block content}
+<div class="full_w">
+				<div class="h_title" n:block=title>Změna nastavení</div><br>
+				<ul>
+				    <li>Pro změnu hesla nebo E-mailu je nutno vždy zadat aktuální heslo.</li>
+				</ul>
+            {form settingsForm}
+				<ul class="errors" n:if="$form->hasErrors()" style="color: red;">
+                                          <li n:foreach="$form->errors as $error">{$error}</li>
+                </ul>
+                					<div class="element">
+                						<label for="oldpass">Heslo</label>
+                						<input n:name=oldpass type="password" id="oldpass" class="text" value="" />
+                					</div>
+                					<div class="element">
+                						<label for="npass1">Nové heslo</label>
+                						<input n:name=npass1 type="password" id="npass1" class="text" value="" />
+                					</div>
+                					<div class="element">
+                						<label for="npass2">Nové heslo znovu</label>
+                						<input n:name=npass2 type="password" id="npass2" class="text" value="" />
+                					</div>
+                					<div class="element">
+                						<label for="email">E-mail</label>
+                						<input n:name=email type="email" id="email" class="text" value="{$settings->admin_email}" />
+                					</div>
+                					<div class="entry">
+                						<button n:name=send type="submit" class="edit">Upravit</button>
+                					</div>
+            {/form}
+			</div>

@@ -1,0 +1,13 @@
+{block content}
+<div class="full_w">
+				<div class="h_title" n:block=title>Správa obsahu: Hlavní stránka</div>
+				{form editForm}
+					<div class="element">
+						<label for="content">Obsah stránky</label>
+						<textarea id="input" n:name=content></textarea>
+					</div>
+					<div class="entry">
+						<button type="submit" n:name=send class="add">Uložit</button>
+					</div>
+				{/form}
+			</div>

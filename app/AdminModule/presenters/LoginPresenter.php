@@ -3,91 +3,58 @@
 namespace App\AdminModule;
 
 use Nette,
-	Nette\Application\UI,
-	App\Model;
+    Nette\Application\UI\Form,
+    App\Settings;
 
 class LoginPresenter extends BasePresenter
 {
-	/** @var string */
-	protected $successRedirect = NULL;
+    /**
+     * @inject
+     * @var \Kdyby\Doctrine\EntityManager
+     */
+    public $EntityManager;
 
-	/** @var string */
-	protected $successRedirectUrl = NULL;
+    protected function startup()
+    {
 
-	/** @persistent */
-	public $backlink;
+        parent::startup();
+        if ($this->user->isLoggedIn()) {
+            $this->redirect('Homepage:');
+        }
+    }
 
+    function createComponentLoginForm()
+    {
+        $form = new Form;
+        $form->addText('login')
+            ->setAttribute('id', 'login')
+            ->setAttribute('class', 'text')
+            ->addRule(Form::FILLED, 'Zadejte jméno');
+        $form->addPassword('pass')
+            ->setAttribute('id', 'pass')
+            ->setAttribute('class', 'text')
+            ->addRule(Form::FILLED, 'Zadejte heslo');
+        $form->addSubmit('send')
+            ->setAttribute('value', 'Přihlásit')
+            ->setAttribute('class', 'ok');
+        $form->onSuccess[] = array($this, 'loginFormSucceeded');
+        return $form;
+    }
 
-	/** @return Form */
-	protected function createComponentRegistrationForm()
-	{
-		$form = new UI\Form;
-		$form->addText('username', 'Jméno:')
-			->setRequired('Zadejte prosím jméno');
-		$form->addPassword('password', 'Heslo:')
-			->setRequired('Zadejte prosím heslo');
-		$form->addSubmit('login', 'Login');
-		$form->onSuccess[] = array($this, 'registrationFormSucceeded');
-		return $form;
-	}
+    public function loginFormSucceeded(Form $form, $values)
+    {
+        $settings = $this->EntityManager->getRepository(Settings::getClassName());
+        $setting = $settings->find(1);
 
+        if ($setting->admin_login == $values['login'] and $setting->admin_pass == md5($values['pass'])) {
+            $this->getUser()->login($setting->admin_login, $setting->admin_pass);
+            $this->redirect('Homepage:');
+        }
+        else {
+            $form->addError('Špatně zadaný login nebo heslo!');
+        }
+    }
 
-	/**
-	* @param Form $form
-	* @return void
-	* @throws Nette\Security\AuthenticationException
-	*/
-	public function registrationFormSucceeded($form)
-	{
-		$values = $form->getValues();
-		//try {
-			$this->user->login($values->username, $values->password);
-			$this->onLoggedIn();
-
-			/*if ($this->presenter->isAjax()) {
-				$this->presenter->sendJson(array('forceRedirect' => ($this->backlink ?: $this->presenter->link('this'))));
-			} elseif ($this->backlink) {
-				$this->presenter->restoreRequest($this->backlink);
-				$this->presenter->redirectUrl($this->backlink);
-			}
-
-			if ($this->successRedirectUrl) {
-				$this->presenter->redirectUrl($this->successRedirectUrl, 301);
-			}
-
-			if ($this->successRedirect) {
-				$this->presenter->redirect($this->successRedirect);
-			}
-		}
-		catch (Nette\Security\AuthenticationException $e) {
-
-			if ($this->presenter->isAjax()) {
-				$this->invalidateControl('loginFormSnippet');
-			} elseif ($values['redirect']) {
-				$this->presenter->redirect('UID|userLogin', array($this->getUniqueId() . '-error' => $e->getMessage()));
-			}
-
-			$form->addError($e->getMessage()); // add error directly to template
-		}*/
-	}
-
-	/**
-	 * @param string $redirect
-	 */
-	public function setRedirect($redirect)
-	{
-		$this->successRedirect = $redirect;
-	}
-
-
-	/**
-	 * @param string $url
-	 *//*
-	public function setRedirectUrl($url)
-	{
-		$this->successRedirectUrl = $url;
-	}
-*/
 }
 
 

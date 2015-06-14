@@ -1,0 +1,40 @@
+{block content}
+<div class="mainbar">
+    <div class="article">
+        {if $product}
+            {form potvrzeniForm}
+            <h2><span n:block=title>Potvrzení objednávky</span></h2>
+            <img src="{$basePath}/images/products/{$product->id}.jpg" width="178" height="185" alt="" class="fl" /><br>
+            <strong>Produkt:</strong> {$product->nazev}<br>
+            <strong>Velikost:</strong> {if $velikost==0}Neurčuje se{else}{$velikost}{/if}<br>
+            <strong>Počet:</strong> {$pocet}<br>
+            {var $cenaCelkem = $pocet*$product->cena}
+            <strong>Celková cena:</strong> {$cenaCelkem} Kč<br>
+            <input n:name=nazev value={$product->nazev}>
+            <input n:name=kusu value={$pocet}>
+            <input n:name=velikost value={$velikost}>
+            <input n:name=cena value={$cenaCelkem}>
+
+            <h3>Kontaktní údaje:</h3>
+            Jméno<br>
+            {input jmeno}<br>
+            Příjmení<br>
+            {input prijmeni}<br>
+            E-Mail<br>
+            {input email}<br>
+            Stát<br>
+            {input stat}<br>
+            Ulice a č. p.<br>
+            {input ulice}<br>
+            Město<br>
+            {input mesto}<br>
+            PSČ<br>
+            {input psc}<br>
+
+            {input send}
+            {/form}
+        {else}
+            Nastala chyba!
+        {/if}
+    </div>
+</div>

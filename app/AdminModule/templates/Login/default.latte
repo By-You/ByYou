@@ -1,4 +1,33 @@
-{block content}
-<br>
-{control registrationForm}
-{/block}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Přihlášení - Administrace - ByYou</title>
+<link rel="stylesheet" type="text/css" href="{$basePath}/admins/css/login.css" media="screen" />
+<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+</head>
+<body>
+<div class="wrap">
+	<div id="content">
+		<div id="main">
+			<div class="full_w">
+			    {form loginForm}
+                  <ul class="errors" n:if="$form->hasErrors()">
+                          <li n:foreach="$form->errors as $error">{$error}</li>
+                  </ul><br>
+
+					<label for="login">Uživatel:</label>
+					{input login}
+					<label for="pass">Heslo:</label>
+					{input pass}
+					<div class="sep"></div>
+					{input send}
+				{/form}
+			</div>
+			<div class="footer">&raquo; <a href="{$basePath}">ByYou</a> | Administrace</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

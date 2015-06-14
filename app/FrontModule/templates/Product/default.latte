@@ -1,29 +1,26 @@
 {block content}
 <div class="mainbar">
+     {foreach $products as $product}
+        {form productForm}
         <div class="article">
-          <h2><span>Tričko ByYou</span></h2>
+          <h2><span>{$product->nazev} ({$product->cena} Kč)</span></h2>
           <div class="clr"></div>
-          <div class="img"><img src="{$basePath}/tricka.jpg" width="178" height="185" alt="" class="fl" /></div>
+          <div class="img"><img src="{$basePath}/images/products/{$product->id}.jpg" width="178" height="185" alt="" class="fl" /></div>
           <div class="post_content">
             <p><strong>Počet kusů:</strong></p>
-              <ul><input type="text" value=""/></ul>
+              <ul>{input kusu}</ul>
+            {if $product->velikost}
             <p><strong>Velikost:</strong></p>
-              <ul><input type="text" value=""/></ul>
-              <p><input type="submit" class= "productbutt" value="Koupit"/><input type="submit" class= "productbutt" value="Do košíku"/></p>
+              <ul>{input velikost}</ul>
+            {else}
+              <input n:name=velikost value=0 type=hidden>
+            {/if}
+              <p>{input send}</p>
+              <input n:name=id value={$product->id}>
           </div>
           <div class="clr"></div>
         </div>
-        <div class="article">
-          <h2><span>Boty ByYou</span></h2>
-          <div class="clr"></div>
-          <div class="img"><img src="{$basePath}/boty2.jpg" width="178" height="185" alt="" class="fl" /></div>
-          <div class="post_content">
-            <p><strong>Počet kusů:</strong></p>
-              <ul><input type="text" value=""/></ul>
-            <p><strong>Velikost:</strong></p>
-              <ul><input type="text" value=""/></ul>
-              <p><input type="submit" class= "productbutt" value="Koupit"/><input type="submit" class= "productbutt" value="Do košíku"/></p>
-          </div>
-          <div class="clr"></div>
-        </div>
-      </div>
+        {/form}
+     {/foreach}
+</div>
+<div style="display: none;" n:block=title>Produkty</div>

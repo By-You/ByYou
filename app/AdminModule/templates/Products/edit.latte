@@ -1,0 +1,21 @@
+{block content}
+<div class="full_w">
+				<div class="h_title" n:block=title>Upravení produktu: {$product->nazev}</div>
+            {form productForm}
+                					<div class="element">
+                						<label for="name">Název</label>
+                						<input n:name=name id="name" class="text" value="{$product->nazev}" />
+                					</div>
+                					<div class="element">
+                						<label for="price">Cena v Kč</label>
+                						<input n:name=price id="price" class="text" value="{$product->cena}" />
+                					</div>
+                					<div class="element">
+                						<label for="velikost">Velikost</label>
+                						{input velikost}
+                						</div>
+                					<div class="entry">
+                						<button n:name=send type="submit" class="edit">Upravit</button>
+                					</div>
+            {/form}
+			</div>

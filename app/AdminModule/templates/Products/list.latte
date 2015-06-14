@@ -1,0 +1,36 @@
+{block content}
+<div class="full_w">
+				<div class="h_title" n:block=title>Seznam produktů</div>
+				<br>
+				<form action="{$basePath}/admin/products/add">
+				&nbsp; <button type="submit" class="add">Přidat produkt</button>
+				</form>
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Název</th>
+							<th scope="col">Cena</th>
+							<th scope="col" style="width: 1%; white-space: nowrap;">Velikost</th>
+							<th scope="col" style="width: 1%;">Obrázek</th>
+							<th scope="col">Akce</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					    {foreach $products as $product}
+						<tr>
+							<td class="align-center">{$product->id}</td>
+							<td>{$product->nazev}</td>
+							<td>{$product->cena} Kč</td>
+							<td style="width: 1%; white-space: nowrap;">{if $product->velikost}Určuje se{else}Neurčuje se{/if}</td>
+							<td><a target="_blank" href="http://localhost/ByYou/images/products/{$product->id}.jpg">Zobrazit</a></td>
+							<td style="width: 1%; white-space: nowrap;">
+							    <a n:href="Products:edit, id => $product->id" class="table-icon edit" title="Upravit"></a>
+                                <a n:href="Products:delete, id => $product->id" class="table-icon delete" title="Smazat"></a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>

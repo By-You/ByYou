@@ -1,70 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
 <head>
-
-<!-- ------------------------------------------------------------ -->
-<!-- ************************************************************ -->
-<!-- * rafika a xhtml/css kod                                   * -->
-<!-- * Copyright (c) 2007, Ondrej Pohorsky  All rights reserved * -->
-<!-- *                                                          * -->
-<!-- * author: Ondrej Pohorsky                                  * -->
-<!-- * url:    http://www.poho.cz                               * -->
-<!-- * mail:   poho@poho.cz                                     * -->
-<!-- * icq:    190484844                                        * -->
-<!-- *                                                          * -->
-<!-- * This work is under BSD license                           * -->
-<!-- ************************************************************ -->
-<!-- ------------------------------------------------------------ -->
-
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta http-equiv="content-language" content="en" />
-<title>Licence</title>
-<meta name="author" content="Ondrej Pohorsky; http://www.poho.cz; poho@poho.cz" />
+<title>{ifset title}{include title|striptags} | {/ifset}Administrace - ByYou</title>
+<link rel="stylesheet" type="text/css" href="{$basePath}/admins/css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{$basePath}/admins/css/navi.css" media="screen" />
+<script type="text/javascript" src="{$basePath}/admins/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+{ifCurrent Content:*}
+<script src="{$basePath}/admins/ckeditor/ckeditor.js"></script>
+<script src="{$basePath}/admins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+var basePath = {$basePath};
 
-<script type="text/javascript" src="{$basePath}/./design/js/javascript.js"></script>
-
-<link rel="shortcut icon" href="{$basePath}/./design/img/favicon.ico" type="image/x-icon" />
-
-<link rel="stylesheet" href="{$basePath}/./design/styles/default.css" media="screen, projection, tv" type="text/css" />
-<link rel="stylesheet" href="{$basePath}/./design/styles/print.css" media="print" type="text/css" />
+$( document ).ready( function() {
+	$( '#input' ).ckeditor();
+} );
+</script>
+{/ifCurrent}
+<script type="text/javascript">
+$(function(){
+	$(".box .h_title").not(this).next("ul").hide("normal");
+	$(".box .h_title").not(this).next("#home").show("normal");
+	$(".box").children(".h_title").click( function() { $(this).next("ul").slideToggle(); });
+});
+</script>
 </head>
 <body>
-  <div id="witti">
-  
-    <div id="header">
-      <a href="{$basePath}/./index.html" class="logo"><span>Witti</span></a>
-      <p class="userinfo"><strong>wellard</strong> | <a href="#">Můj Účet</a> | <a href="#">Odhlášení!</a></p>
-      <div class="cleaner"></div>
-    </div><!-- hlavička -->
-    
-    <div id="main">
-      <div id="menu">
-        <ul>
-          <li><a n:href="Homepage:default">Úvod</a></li>
-          <li><a n:href="Parts:default">Části</a>
-            <ul>
-              <li><a n:href="Parts:text">Text</a></li>
-              <li><a n:href="Parts:seznamy">Seznamy</a></li>
-              <li><a n:href="Parts:table">Table as list</a></li>
-              <li><a n:href="Parts:informace">Informační tabule</a></li>
-              <li><a n:href="Parts:formular">Formulář</a></li>
-              <li><a n:href="Parts:zpravy">Zprávy</a></li>
-              <li><a n:href="Parts:sloupce">Oddělené sloupce</a></li>
-              <li><a n:href="Parts:galerie">Galerie</a></li>
-            </ul>
-          </li>
-          <li><a n:href="Licence:default" class="active">Licence</a></li>
-        </ul>
-      </div>
-      {block content}
-      {/block}
-      <div class="cleaner"></div>
-    </div><!-- hlavní -->
-    
-    <div id="footer">
-      <p>design: <a href="#">Ondřej Pohorský</a></p>
-    </div><!-- zápatí -->
-  
-  </div><!-- witti -->
+<div class="wrap">
+	<div id="header">
+		<div id="top">
+			<div class="left">
+				<p>Administrace <strong>ByYou</strong> [ <a n:href="Homepage:out">odhlásit</a> ]</p>
+			</div>
+			<div class="right">
+				<div class="align-right">
+					<p>Serverový čas: <strong>{$date}, {$time}</strong></p>
+				</div>
+			</div>
+		</div>
+		<div id="nav">
+			<ul>
+				<li class="upp"><a href="#">Správa obsahu</a>
+					<ul>
+						<li>&#8250; <a n:href="Content:main">Hlavní stránka</a></li>
+						<li>&#8250; <a n:href="Content:about">O nás</a></li>
+					</ul>
+				</li>
+				<li class="upp"><a href="#">Produkty</a>
+					<ul>
+						<li>&#8250; <a n:href="Products:list">Seznam</a></li>
+						<li>&#8250; <a n:href="Products:add">Přidat</a></li>
+					</ul>
+				</li>
+				<li class="upp"><a n:href="Settings:">Nastavení</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="sidebar">
+			<div class="box">
+				<div class="h_title">&#8250; Správa obsahu</div>
+				<ul>
+					<li class="b1"><a class="icon view_page" n:href="Content:main">Hlavní stránka</a></li>
+					<li class="b2"><a class="icon users" n:href="Content:about">O nás</a></li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<div class="h_title">&#8250; Produkty</div>
+				<ul>
+					<li class="b1"><a class="icon category" n:href="Products:list">Seznam</a></li>
+					<li class="b2"><a class="icon add_page" n:href="Products:add">Přidat</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<div class="h_title"><a n:href="Settings:">&#8250; Nastavení</a></div>
+			</div>
+		</div>
+		<div id="main">
+            {block content}
+            {/block}
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div id="footer">
+		<div class="left">
+			<p>Administrace <a href="http://psopf.eu">ByYou</a></p>
+		</div>
+		<div class="right">
+			<p><a href="http://psopf.eu">Zpátky na web</a></p>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
+

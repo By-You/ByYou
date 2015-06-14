@@ -2,13 +2,14 @@ parameters:
 
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=byyou'
-	user: root
-	password: ''
+	dsn: 'mysql:host=wm80.wedos.net;dbname=d91621_byyou'
+	user: a91621_byyou
+	password: '52nXhLGV'
 	options:
 		lazy: yes
 
 doctrine:
-    user: root
-    password: ''
-    dbname: byyou
+    host: wm80.wedos.net
+    user: a91621_byyou
+    password: '52nXhLGV'
+    dbname: d91621_byyou

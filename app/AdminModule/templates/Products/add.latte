@@ -1,0 +1,25 @@
+{block content}
+<div class="full_w">
+				<div class="h_title" n:block=title>Přidat produkt</div>
+            {form productForm}
+                					<div class="element">
+                						<label for="name">Název</label>
+                						<input n:name=name id="name" class="text" value="" />
+                					</div>
+                					<div class="element">
+                						<label for="price">Cena v Kč</label>
+                						<input n:name=price id="price" class="text" value="" />
+                					</div>
+                					<div class="element">
+                						<label for="velikost">Velikost</label>
+                						{input velikost}
+                						</div>
+                					<div class="element">
+                						<label for="img">Obrázek</label>
+                						{input img}
+                					</div>
+                					<div class="entry">
+                						<button n:name=send type="submit" class="add">Přidat</button>
+                					</div>
+            {/form}
+			</div>

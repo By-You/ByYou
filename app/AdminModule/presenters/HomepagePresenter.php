@@ -7,5 +7,10 @@ use Nette,
 
 class HomepagePresenter extends SecurePresenter
 {
-    // ...
+    public function actionOut()
+    {
+        $this->getUser()->logout();
+        $this->flashMessage('Odhlášení bylo úspěšné.');
+        $this->redirect('Login:');
+    }
 }
